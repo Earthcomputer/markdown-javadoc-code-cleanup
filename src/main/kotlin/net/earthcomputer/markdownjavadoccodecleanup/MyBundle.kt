@@ -1,4 +1,4 @@
-package com.github.earthcomputer.markdownjavadoccodecleanup
+package net.earthcomputer.markdownjavadoccodecleanup
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

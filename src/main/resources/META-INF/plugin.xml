@@ -1,15 +1,24 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.earthcomputer.markdownjavadoccodecleanup</id>
-    <name>markdown-javadoc-code-cleanup</name>
-    <vendor>earthcomputer</vendor>
+    <id>net.earthcomputer.markdownjavadoccodecleanup</id>
+    <name>Markdown Javadoc Code Cleanup</name>
+    <vendor>Earthcomputer</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.earthcomputer.markdownjavadoccodecleanup.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.earthcomputer.markdownjavadoccodecleanup.startup.MyProjectActivity" />
+        <localInspection
+                cleanupTool="true"
+                language="JAVA"
+                bundle="messages.MyBundle"
+                key="inspection.markdown.javadoc.code.cleanup.display.name"
+                groupBundle="messages.InspectionsBundle"
+                groupKey="group.names.language.level.specific.issues.and.migration.aids23"
+                groupPathKey="group.path.names.java.language.level.specific.issues.and.migration.aids"
+                enabledByDefault="false"
+                level="WARNING"
+                implementationClass="net.earthcomputer.markdownjavadoccodecleanup.MarkdownJavadocCodeCleanupInspection"/>
     </extensions>
 </idea-plugin>
